@@ -327,19 +327,28 @@ template {
   --FFFFFF: 255, 255, 255;
   --141D2F: 20, 29, 47;
   --1E2A47: 30, 42, 71;
-  --account-tag: var(--0079FF);
-  --search-bar-dark-blue: var(--0079FF);
-  --search-bar-light-blue: var(--60ABFF);
-  --dark-toggle-hover: var(--90A4D4);
-  --lm-join-date: var(--697C9A);
-  --lm-light-text: var(--4B6A9B);
-  --lm-dark-text: var(--2B3442);
-  --lm-search-text: var(--222731);
-  --lm-page: var(--F6F8FF);
-  --lm-container: var(--FEFEFE);
-  --dm-page: var(--141D2F)
-  --dm-container: var(--1E2A47);
-  --dm-text: var(--FFFFFF);
+  --color-account-tag: var(--0079FF);
+  --color-search-bar-dark-blue: var(--0079FF);
+  --color-search-bar-light-blue: var(--60ABFF);
+  --color-dark-toggle-hover: var(--90A4D4);
+}
+
+[data-theme=default] {
+  --color-join-date: var(--697C9A);
+  --color-light-text: var(--4B6A9B);
+  --color-dark-text: var(--2B3442);
+  --color-search-text: var(--222731);
+  --color-page: var(--F6F8FF);
+  --color-container: var(--FEFEFE);
+}
+
+[data-theme=dark] {
+  --color-join-date: var(--FFFFFF);
+  --color-light-text: var(--FFFFFF);
+  --color-dark-text: var(--FFFFFF);
+  --color-search-text: var(--FFFFFF);
+  --color-page: var(--141D2F);
+  --color-container: var(--1E2A47);
 }
 
 :root {
@@ -350,6 +359,32 @@ template {
   --font-h3: 1.1rem;
   --font-h4: 0.9rem;
   font-size: calc(0.8125em + 0.14vw);
+}
+
+body {
+  background-color: rgba(var(--color-page), 1);
+}
+
+h1 {
+  font-size: var(--font-h1);
+}
+
+h2 {
+  font-size: var(--font-h2);
+}
+
+h3 {
+  font-size: var(--font-h3);
+}
+
+h4 {
+  font-size: var(--font-h4);
+}
+
+main {
+  margin: 0 2em;
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -9,21 +9,77 @@
   
   <title>Frontend Mentor | GitHub user search app</title>
 </head>
-<body>
 
-  devfinder
-
-  Light
-  Dark
-
-  Search GitHub username...
-  Search
-
-  Joined
-
-  Repos
-  Followers
-  Following
-
+<body data-theme="default">
+  <main>
+    <div>
+      <h1>devfinder</h1>
+    
+      <div>
+        <button>
+          Light
+          <object data="./assets/icon-sun.svg" type="image/svg+xml">
+            <img src="./assets/icon-sun.svg" alt="">
+          </object>
+        </button>
+        <button>
+          Dark
+          <object data="./assets/icon-moon.svg" type="image/svg+xml">
+            <img src="./assets/icon-moon.svg" alt="">
+          </object>
+        </button>
+      </div>
+    </div>
+    
+    <div>
+      <object data="./assets/icon-search.svg" type="image/svg+xml">
+        <img src="./assets/icon-search.svg" alt="">
+      </object>
+      <input type="text" name="search" id="search" aria-label="user search bar"
+             placeholder="Search Github Username...">
+      <label for="search">No results</label>
+      <button>Search</button>
+    </div>
+  
+    <div>
+      <div>Avatar</div>
+      <h1>Name</h1>
+      <h3>Tag</h3>
+      <p>Joined</p>
+      <p>Bio</p>
+      <div>
+        <div>
+          <h4>Repos</h4>
+          <h3>Repo #</h3>
+        </div>
+        <div>
+          <h4>Followers</h4>
+          <h3>Follower #</h3>
+        </div>
+        <div>
+          <h4>Following</h4>
+          <h4>Following #</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div>
+      <object data="./assets/icon-location.svg" type="image/svg+xml">
+        <img src="./assets/icon-location.svg" alt="">
+      </object>
+  
+      <object data="./assets/icon-twitter.svg" type="image/svg+xml">
+        <img src="./assets/icon-twitter.svg" alt="">
+      </object>
+  
+      <object data="./assets/icon-website.svg" type="image/svg+xml">  
+        <img src="./assets/icon-website.svg" alt="">  
+      </object>    
+  
+      <object data="./assets/icon-company.svg" type="image/svg+xml">
+        <img src="./assets/icon-company.svg" alt="">
+      </object>
+    </div>
+  </main>
 </body>
 </html>
