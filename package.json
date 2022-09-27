@@ -1,0 +1,21 @@
+{
+  "name": "github-user-search-app-working",
+  "version": "1.0.0",
+  "description": "![Design preview for the GitHub user search app coding challenge](./preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "sass --watch ./src/style.scss ./dist/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmcbutter/github-user-search-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmcbutter/github-user-search-app/issues"
+  },
+  "homepage": "https://github.com/jmcbutter/github-user-search-app#readme"
+}
