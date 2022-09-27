@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -314,13 +315,41 @@ template {
 /*                                SETTINGS                                  */
 :root {
   --0079FF: 0, 121, 255;
+  --60ABFF: 96, 171, 255;
+  --90A4D4: 114, 164, 212;
   --697C9A: 105, 124, 154;
   --4B6A9B: 75, 106, 155;
+  --222731: 34, 39, 49
+    //Search Bar Text (when search bar is not empty)
   --2B3442: 43, 52, 66;
   --F6F8FF: 246, 248, 254;
   --FEFEFE: 254, 254, 254;
+  --FFFFFF: 255, 255, 255;
   --141D2F: 20, 29, 47;
   --1E2A47: 30, 42, 71;
+  --account-tag: var(--0079FF);
+  --search-bar-dark-blue: var(--0079FF);
+  --search-bar-light-blue: var(--60ABFF);
+  --dark-toggle-hover: var(--90A4D4);
+  --lm-join-date: var(--697C9A);
+  --lm-light-text: var(--4B6A9B);
+  --lm-dark-text: var(--2B3442);
+  --lm-search-text: var(--222731);
+  --lm-page: var(--F6F8FF);
+  --lm-container: var(--FEFEFE);
+  --dm-page: var(--141D2F)
+  --dm-container: var(--1E2A47);
+  --dm-text: var(--FFFFFF);
+}
+
+:root {
+  --space-mono: "Space Mono", monospace;
+  font-family: var(--space-mono);
+  --font-h1: 1.7rem;
+  --font-h2: 1.5rem;
+  --font-h3: 1.1rem;
+  --font-h4: 0.9rem;
+  font-size: calc(0.8125em + 0.14vw);
 }
 
 /*# sourceMappingURL=style.css.map */
