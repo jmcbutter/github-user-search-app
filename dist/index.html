@@ -11,75 +11,77 @@
 </head>
 
 <body data-theme="default">
-  <main>
-    <div>
-      <h1>devfinder</h1>
-    
-      <div>
-        <button>
-          Light
-          <object data="./assets/icon-sun.svg" type="image/svg+xml">
-            <img src="./assets/icon-sun.svg" alt="">
-          </object>
-        </button>
-        <button>
-          Dark
-          <object data="./assets/icon-moon.svg" type="image/svg+xml">
-            <img src="./assets/icon-moon.svg" alt="">
-          </object>
-        </button>
-      </div>
+  <header class="header">
+    <h1>devfinder</h1>
+  
+    <div class="header__toggle-switch">
+      <button class="toggle-switch toggle-switch--light">
+        <p>Light</p>
+        <object data="./assets/icon-sun.svg" type="image/svg+xml">
+          <img src="./assets/icon-sun.svg" alt="">
+        </object>
+      </button>
+      <button class="toggle-switch toggle-switch--dark">
+        <p>Dark</p>
+        <object data="./assets/icon-moon.svg" type="image/svg+xml">
+          <img src="./assets/icon-moon.svg" alt="">
+        </object>
+      </button>
     </div>
-    
-    <div>
-      <object data="./assets/icon-search.svg" type="image/svg+xml">
+  </header>
+ 
+  <main>
+    <form class="user-search">
+      <object class="user-search__icon" data="./assets/icon-search.svg" type="image/svg+xml">
         <img src="./assets/icon-search.svg" alt="">
       </object>
-      <input type="text" name="search" id="search" aria-label="user search bar"
-             placeholder="Search Github Username...">
-      <label for="search">No results</label>
-      <button>Search</button>
-    </div>
+      <input class="container user-search__input" type="text" name="search" id="search" 
+             aria-label="user search bar" placeholder="Search Github Username&#8230">
+      <label class="user-search__label" for="search">No results</label>
+      <button class="user-search__button">Search</button>
+    </form>
   
-    <div>
-      <div>Avatar</div>
-      <h1>Name</h1>
-      <h3>Tag</h3>
-      <p>Joined</p>
-      <p>Bio</p>
-      <div>
-        <div>
-          <h4>Repos</h4>
-          <h3>Repo #</h3>
+    <div class="container user">
+      <div class="user__avatar">Avatar</div>
+      <h1 class="user__name">Name</h1>
+      <h3 class="user__tag">Tag</h3>
+      <p class="user__joined">Joined</p>
+      <p class="user__bio">Bio</p>
+
+      <div class="user__stats stats">
+        <div class="stats__group">
+          <h4 class="stats__group-head">Repos</h4>
+          <h3 class="stats__group-number">8</h3>
         </div>
-        <div>
-          <h4>Followers</h4>
-          <h3>Follower #</h3>
+        <div class="stats__group">
+          <h4 class="stats__group-head">Followers</h4>
+          <h3 class="stats__group-number">#</h3>
         </div>
-        <div>
-          <h4>Following</h4>
-          <h4>Following #</h4>
+        <div class="stats__group">
+          <h4 class="stats__group-head">Following</h4>
+          <h3 class="stats__group-number">#</h3>
         </div>
+      </div>
+      
+      <div class="user__links">
+        <object data="./assets/icon-location.svg" type="image/svg+xml">
+          <img src="./assets/icon-location.svg" alt="">
+        </object>
+    
+        <object data="./assets/icon-twitter.svg" type="image/svg+xml">
+          <img src="./assets/icon-twitter.svg" alt="">
+        </object>
+    
+        <object data="./assets/icon-website.svg" type="image/svg+xml">  
+          <img src="./assets/icon-website.svg" alt="">  
+        </object>    
+    
+        <object data="./assets/icon-company.svg" type="image/svg+xml">
+          <img src="./assets/icon-company.svg" alt="">
+        </object>
       </div>
     </div>
   
-    <div>
-      <object data="./assets/icon-location.svg" type="image/svg+xml">
-        <img src="./assets/icon-location.svg" alt="">
-      </object>
-  
-      <object data="./assets/icon-twitter.svg" type="image/svg+xml">
-        <img src="./assets/icon-twitter.svg" alt="">
-      </object>
-  
-      <object data="./assets/icon-website.svg" type="image/svg+xml">  
-        <img src="./assets/icon-website.svg" alt="">  
-      </object>    
-  
-      <object data="./assets/icon-company.svg" type="image/svg+xml">
-        <img src="./assets/icon-company.svg" alt="">
-      </object>
-    </div>
   </main>
 </body>
 </html>
