@@ -1,0 +1,45 @@
+:root {
+  --0079FF: 0, 121, 255;
+  --60ABFF: 96, 171, 255;
+    //Search Bar Button - Light
+  --90A4D4: 114, 164, 212;
+    //Dark Toggle Button -- Hover
+  --697C9A: 105, 124, 154;
+  --4B6A9B: 75, 106, 155;
+  --222731: 34, 39, 49
+  --2B3442: 43, 52, 66;
+  --F6F8FF: 246, 248, 254;
+  --FEFEFE: 254, 254, 254;
+  --FFFFFF: 255, 255, 255;
+  --141D2F: 20, 29, 47;
+  --1E2A47: 30, 42, 71;
+  --4660BB: 70, 96, 187;
+
+
+  --color-account-tag: var(--0079FF);
+  --color-search-bar-dark-blue: var(--0079FF);
+  --color-search-bar-light-blue: var(--60ABFF);
+  --color-dark-toggle-hover: var(--90A4D4);
+}
+
+[data-theme="default"] {
+  --color-theme-switch-toggle: var(--697C9A)
+  --color-join-date: var(--697C9A);
+  --color-light-text: var(--4B6A9B);
+  --color-dark-text: var(--2B3442);
+  --color-search-text: var(--222731);
+  --color-page: var(--F6F8FF);
+  --color-container: var(--FEFEFE);
+  --color-box-shadow: var(--4660BB);
+}
+
+[data-theme="dark"] {
+  --color-theme-switch-toggle: var(--697C9A)
+  --color-join-date: var(--FFFFFF);
+  --color-light-text: var(--FFFFFF);
+  --color-dark-text: var(--FFFFFF);
+  --color-search-text: var(--FFFFFF);
+  --color-page: var(--141D2F);
+  --color-container: var(--1E2A47);
+  --color-box-shadow: var(--color-page);
+}

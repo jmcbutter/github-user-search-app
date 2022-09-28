@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  //Style
+  --space-mono: 'Space Mono', monospace;
+
+  font-family: var(--space-mono);
+
+  //Size
+  --font-h1: 1.7rem;
+  --font-h2: 1.5rem;
+  --font-h3: 1.1rem;
+  --font-h4: 0.9rem;
+  
+  font-size: calc(0.75em + 0.27vw);
+}

@@ -1,162 +1,35 @@
 @forward "./css/normalize.scss";
-
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
-/*                                SETTINGS                                  */
-//COLORS
-:root {
-  --0079FF: 0, 121, 255;
-    // @tag
-    //Idle Search Bar, Search Bar Magnifying Glass, Search Bar Cursor 
-  --60ABFF: 96, 171, 255;
-    //Search Bar Button - Light
-  --90A4D4: 114, 164, 212;
-    //Dark Toggle Button -- Hover
-  --697C9A: 105, 124, 154;
-    //Join Date -- Light Mode
-  --4B6A9B: 75, 106, 155;
-    //Text -- Light Mode (All text except Name, Tag, Joined Date, Numbers)
-  --222731: 34, 39, 49
-    //Search Bar Text (when search bar is not empty)
-  --2B3442: 43, 52, 66;
-    //Name, Numbers (Repos, Followers, Following)
-  --F6F8FF: 246, 248, 254;
-    //Page Background -- Light Mode
-    //Profile Number Background (Repos, Followers, Following) -- Light Mode
-  --FEFEFE: 254, 254, 254;
-    //Search Bar Background, Results Background -- Light Mode
-  --FFFFFF: 255, 255, 255;
-    //All Text -- Dark Mode
-  --141D2F: 20, 29, 47;
-    //Page Background -- Dark Mode
-    //Profile Number Background -- Dark Mode
-  --1E2A47: 30, 42, 71;
-    //Search Bar Background, Results Background -- Dark Mode
-  --4660BB: 70, 96, 187;
-    //Box Shadow Light Mode
+@forward "./css/colors.scss";
+@forward "./css/fonts.scss";
+@forward "./css/elements.scss";
+@forward "./css/toggle-theme.scss";
 
 
-  --color-account-tag: var(--0079FF);
-  --color-search-bar-dark-blue: var(--0079FF);
-  --color-search-bar-light-blue: var(--60ABFF);
-  --color-dark-toggle-hover: var(--90A4D4);
-}
-
-[data-theme="default"] {
-  --color-join-date: var(--697C9A);
-  --color-light-text: var(--4B6A9B);
-  --color-dark-text: var(--2B3442);
-  --color-search-text: var(--222731);
-  --color-page: var(--F6F8FF);
-  --color-container: var(--FEFEFE);
-  --color-box-shadow: var(--4660BB);
-}
-
-[data-theme="dark"] {
-  --color-join-date: var(--FFFFFF);
-  --color-light-text: var(--FFFFFF);
-  --color-dark-text: var(--FFFFFF);
-  --color-search-text: var(--FFFFFF);
-  --color-page: var(--141D2F);
-  --color-container: var(--1E2A47);
-  --color-box-shadow: var(--color-page);
-}
-
-//FONTS 
-:root {
-  //Style
-  --space-mono: 'Space Mono', monospace;
-
-  font-family: var(--space-mono);
-
-  //Size
-  --font-h1: 1.7rem;
-  --font-h2: 1.5rem;
-  --font-h3: 1.1rem;
-  --font-h4: 0.9rem;
-  
-  font-size: calc(0.75em + 0.27vw);
-}
-
-
-body {
-  background-color: rgba(var(--color-page), 1);
-}
-
-h1 {
-  font-size: var(--font-h1);
-}
-
-h2 {
-  font-size: var(--font-h2);
-}
-
-h3 {
-  font-size: var(--font-h3);
-}
-
-h4 {
-  font-size: var(--font-h4);
-}
-
-.header {
-  margin: 2em;
-  margin-bottom: 2.8em;
-  display: flex;
-
-  &__toggle-switch {
-    flex: 1;
-    justify-self: flex-end;
-
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-
-
-main {
-  margin: 2em;
-  display: flex;
-  flex-direction: column;
-}
-
-.toggle-switch {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.2em;
-
-  font-weight: bold;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-
-  background-color: transparent;
-  border: none;
-
-  &--light {
-    display: none;
-  }
-
-  &--dark {
-    // display: none;
-  }
-}
 
 .user-search {
-  display: flex;
-  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr 17ch auto;
+  align-items: center;
   height: 4.6em;
   margin-bottom: 1.2em;
 
+  & > * {
+    grid-row: 1;
+    z-index: 1;
+  }
+
   &__icon {
-    position: absolute;
-    left: 1.2em;
-    top: 50%;
-    transform: translateY(-50%);
+    transform: translateX(1.2em);
+    grid-column: 1;
   }
 
   &__input {
     padding-left: 3.4em;
+    height: 100%;
     color: var(--color-search-text);
+    caret-color: rgba(var(--color-search-bar-dark-blue), 1);
+    grid-column: 1 / span 4;
+    z-index: 0;
 
     &:focus {
       outline: 1px solid rgba(var(--color-search-bar-dark-blue), 1);
@@ -168,10 +41,11 @@ main {
   }
 
   &__button {
-    position: absolute;
-    top: 0.5em;
-    bottom: 0.5em;
-    right: 0.5em;
+    grid-column: 4;
+    justify-self: flex-end;
+    max-width: 6.5em;
+    height: 76%;
+    margin-right: 0.5em;
     padding: 0 1.4em;
     border-radius: 0.7em;
     border: none;
@@ -181,18 +55,23 @@ main {
   }
 
   &__label {
-    position: absolute;
-    right: 7em;
-    padding-right: 1em;
-    top: 50%;
-    transform: translateY(-50%);
+    grid-column: 3;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    height: 100%;
+
     background-image: linear-gradient(to right,
                                       rgba(var(--color-container), 0), 
                                       rgba(var(--color-container), 1) 3em);
-    padding-left: 4em;
+    padding-left: 2em;
     color: #F74646;
     font-weight: bold;
-    // display: none;
+    display: none;
+
+    &::after {
+      content: "\00a0 "
+    }
   }
 }
 
@@ -227,16 +106,19 @@ main {
 
   &__name {
     grid-area: name;
+    color: rgba(var(--color-dark-text))
   }
 
   &__tag {
     grid-area: tag;
     margin-bottom: 0.4em;
+    color: rgba(var(--color-account-tag), 1);
   }
   
   &__joined {
     grid-area: joined;
     margin-bottom: 2.5em;
+    color: rgba(var(--color-join-date));
   }
 
   &__bio {
@@ -263,17 +145,58 @@ main {
   padding: 1.4em 1.2em;
   border-radius: 0.8em;
 
+  color: var(--color-dark-text);
+
   &__group {
     flex: 1;
+    & > * {
+      margin: 0;
+    }
   }
 
   &__group-head {
     font-weight: normal;
-    margin: 0;
+    margin-bottom: 0.6em;
   }
 
   &__group-number {
     font-size: 1.25rem;
+  }
+}
+
+.links {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1.2em;
+
+  grid-template-areas: "location"
+                       "website"
+                       "twitter"
+                       "company";
+
+  &__location {
+    grid-area: location;
+  }
+
+  &__website {
+    grid-area: website;
+  }
+
+  &__twitter {
+    grid-area: twitter;
+  }
+
+  &__company {
+    grid-area: company;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+
+  & > * {
     margin: 0;
   }
 }

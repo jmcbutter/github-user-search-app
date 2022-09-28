@@ -1,0 +1,31 @@
+.toggle-theme {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  color: rgba(var(--color-theme-switch-toggle), 1);
+    
+  &:hover{
+    color: rgba(var(--color-dark-toggle-hover), 1);
+    fill: rgba(var(--color-dark-toggle-hover), 1);
+  }
+
+  &--light {
+    // display: none;
+    fill: #FFF
+  }
+
+  &--dark {
+    display: none;
+    fill: #697C9A;
+  }
+}

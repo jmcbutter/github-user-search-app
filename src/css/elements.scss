@@ -1,0 +1,35 @@
+body {
+  background-color: rgba(var(--color-page), 1);
+  color: rgba(var(--color-light-text), 1);
+}
+
+h1 {
+  font-size: var(--font-h1);
+}
+
+h2 {
+  font-size: var(--font-h2);
+}
+
+h3 {
+  font-size: var(--font-h3);
+}
+
+h4 {
+  font-size: var(--font-h4);
+}
+
+header {
+  margin: 2em;
+  margin-bottom: 2.8em;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+}
