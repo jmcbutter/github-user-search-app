@@ -1,0 +1,36 @@
+.links {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1.2em;
+
+  grid-template-areas: "location"
+                       "website"
+                       "twitter"
+                       "company";
+
+  &__location {
+    grid-area: location;
+  }
+
+  &__website {
+    grid-area: website;
+  }
+
+  &__twitter {
+    grid-area: twitter;
+  }
+
+  &__company {
+    grid-area: company;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+
+  & > * {
+    margin: 0;
+  }
+}

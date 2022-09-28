@@ -1,0 +1,26 @@
+.stats {
+  display: flex;
+  text-align: center;
+  
+  background-color: rgba(var(--color-page), 1);
+  padding: 1.4em 1.2em;
+  border-radius: 0.8em;
+
+  color: var(--color-dark-text);
+
+  &__group {
+    flex: 1;
+    & > * {
+      margin: 0;
+    }
+  }
+
+  &__group-head {
+    font-weight: normal;
+    margin-bottom: 0.6em;
+  }
+
+  &__group-number {
+    font-size: 1.25rem;
+  }
+}

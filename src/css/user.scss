@@ -1,0 +1,59 @@
+@use "./breakpoints.scss" as *;
+
+.user {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 1.5em;
+  grid-template-areas: "avatar name"
+                       "avatar tag"
+                       "avatar joined"
+                       "bio    bio"
+                       "stats  stats"
+                       "links  links";
+
+  padding: 2.5em 1.8em 0 2.5em;
+
+  & > * {
+    margin: 0;
+  }
+
+  &__avatar {
+    grid-area: avatar;
+  }
+
+  &__name {
+    grid-area: name;
+    color: rgba(var(--color-dark-text))
+  }
+
+  &__tag {
+    grid-area: tag;
+    margin-bottom: 0.4em;
+    color: rgba(var(--color-account-tag), 1);
+  }
+  
+  &__joined {
+    grid-area: joined;
+    margin-bottom: 2.5em;
+    color: rgba(var(--color-join-date));
+  }
+
+  &__bio {
+    grid-area: bio;
+    margin-bottom: 2.2em;
+  }
+
+  &__stats {
+    grid-area: stats;
+    margin-bottom: 1.8em;
+  }
+
+  &__links {
+    grid-area: links;
+    margin-bottom: 3.7em;
+  }
+}
+
+@media screen and (min-width:$tablet) {
+  
+}
