@@ -1,3 +1,5 @@
+@use "./breakpoints.scss" as *;
+
 .links {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
@@ -32,5 +34,14 @@
 
   & > * {
     margin: 0;
+  }
+}
+
+@media screen and (min-width:$tablet) {
+  .links {
+    grid-template-areas: "location twitter"
+                         "website  company";
+
+    grid-template-rows: 1fr 1fr;
   }
 }

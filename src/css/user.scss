@@ -19,6 +19,9 @@
 
   &__avatar {
     grid-area: avatar;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__name {
@@ -54,6 +57,22 @@
   }
 }
 
-@media screen and (min-width:$tablet) {
+@media screen and (min-width:$desktop) {
+  .user {
+    grid-template-columns: 1fr 3fr auto;
+    column-gap: 1.5em;
+    grid-template-areas: "avatar name  joined"
+                         "avatar tag   tag"
+                         "avatar bio   bio"
+                         "  .    stats stats"
+                         "  .    links links";
   
+    &__joined {
+      margin-bottom: 0;
+    }
+  
+    &__tag {
+      margin-bottom: 2.5em;
+    }
+  }
 }
