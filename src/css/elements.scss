@@ -36,6 +36,19 @@ main {
   flex-direction: column;
 }
 
+a {
+  color: rgba(var(--color-light-text));
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: rgba(var(--color-light-text));
+  }
+}
+
 @media screen and (min-width:$tablet) {
   main, header {
     width: clamp(33em, 75%, 46em);
