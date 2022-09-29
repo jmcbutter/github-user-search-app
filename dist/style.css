@@ -327,10 +327,12 @@ template {
   --141D2F: 20, 29, 47;
   --1E2A47: 30, 42, 71;
   --4660BB: 70, 96, 187;
+  --222731: 34, 39, 49;
   --color-account-tag: var(--0079FF);
   --color-search-bar-dark-blue: var(--0079FF);
   --color-search-bar-light-blue: var(--60ABFF);
-  --color-dark-toggle-hover: var(--90A4D4);
+  --color-light-toggle-hover: var(--90A4D4);
+  --color-dark-toggle-hover: var(--222731);
 }
 
 [data-theme=default] {
@@ -415,14 +417,14 @@ main {
 }
 
 a {
-  color: rgba(var(--color-light-text));
+  color: inherit;
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
 }
 a:visited {
-  color: rgba(var(--color-light-text));
+  color: inherit;
 }
 
 @media screen and (min-width: 481px) {
@@ -444,16 +446,19 @@ a:visited {
   cursor: pointer;
   color: rgba(var(--color-theme-switch-toggle), 1);
 }
-.toggle-theme:hover {
-  color: rgba(var(--color-dark-toggle-hover), 1);
-  fill: rgba(var(--color-dark-toggle-hover), 1);
-}
 .toggle-theme--light {
   fill: #FFF;
 }
+.toggle-theme--light:hover {
+  color: rgba(var(--color-light-toggle-hover), 1);
+  fill: rgba(var(--color-light-toggle-hover), 1);
+}
 .toggle-theme--dark {
-  display: none;
   fill: #697C9A;
+}
+.toggle-theme--dark:hover {
+  color: rgba(var(--color-dark-toggle-hover), 1);
+  fill: rgba(var(--color-dark-toggle-hover), 1);
 }
 
 .user-search {
@@ -508,7 +513,6 @@ a:visited {
   background-image: linear-gradient(to right, rgba(var(--color-container), 0), rgba(var(--color-container), 1) 3em);
   color: #F74646;
   font-weight: bold;
-  display: none;
 }
 .user-search__label::after {
   content: " ";
@@ -596,7 +600,10 @@ a:visited {
 .links {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.2em;
+  color: rgb(var(--color-light-text));
+  fill: rgb(var(--color-light-text));
   grid-template-areas: "location" "website" "twitter" "company";
 }
 .links__location {
@@ -620,14 +627,31 @@ a:visited {
 .link > * {
   margin: 0;
 }
+.link > svg {
+  min-width: 20px;
+}
+.link > a {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 @media screen and (min-width: 481px) {
   .links {
     grid-template-areas: "location twitter" "website  company";
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
+.grayed-out {
+  color: rgba(var(--color-light-text), 0.5);
+  fill: rgba(var(--color-light-text), 0.5);
+}
+
+.isHidden {
+  display: none;
+}
+
 .container {
   width: 100%;
   border-radius: 1.2em;

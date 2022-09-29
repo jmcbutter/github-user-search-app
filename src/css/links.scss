@@ -3,7 +3,11 @@
 .links {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.2em;
+
+  color: rgb(var(--color-light-text));
+  fill: rgb(var(--color-light-text));
 
   grid-template-areas: "location"
                        "website"
@@ -35,6 +39,16 @@
   & > * {
     margin: 0;
   }
+
+  & > svg {
+    min-width: 20px;
+  }
+
+  & > a {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 @media screen and (min-width:$tablet) {
@@ -43,6 +57,6 @@
                          "website  company";
 
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }

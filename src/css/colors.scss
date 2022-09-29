@@ -3,7 +3,6 @@
   --60ABFF: 96, 171, 255;
     //Search Bar Button - Light
   --90A4D4: 114, 164, 212;
-    //Dark Toggle Button -- Hover
   --697C9A: 105, 124, 154;
   --4B6A9B: 75, 106, 155;
   --222731: 34, 39, 49
@@ -14,12 +13,14 @@
   --141D2F: 20, 29, 47;
   --1E2A47: 30, 42, 71;
   --4660BB: 70, 96, 187;
+  --222731: 34, 39, 49;
 
 
   --color-account-tag: var(--0079FF);
   --color-search-bar-dark-blue: var(--0079FF);
   --color-search-bar-light-blue: var(--60ABFF);
-  --color-dark-toggle-hover: var(--90A4D4);
+  --color-light-toggle-hover: var(--90A4D4);
+  --color-dark-toggle-hover: var(--222731);
 }
 
 [data-theme="default"] {

@@ -14,18 +14,23 @@
 
   color: rgba(var(--color-theme-switch-toggle), 1);
     
-  &:hover{
-    color: rgba(var(--color-dark-toggle-hover), 1);
-    fill: rgba(var(--color-dark-toggle-hover), 1);
-  }
+
 
   &--light {
-    // display: none;
-    fill: #FFF
+    fill: #FFF;
+
+    &:hover{
+      color: rgba(var(--color-light-toggle-hover), 1);
+      fill: rgba(var(--color-light-toggle-hover), 1);
+    }
   }
 
   &--dark {
-    display: none;
     fill: #697C9A;
+
+    &:hover{
+      color: rgba(var(--color-dark-toggle-hover), 1);
+      fill: rgba(var(--color-dark-toggle-hover), 1);
+    }
   }
 }

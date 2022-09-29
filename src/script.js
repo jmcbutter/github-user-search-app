@@ -1,12 +1,36 @@
 "use strict";
-let user = "jmcbutter";
+let user = "octocat";
+fetchUser(user);
 
-fetch(`https://api.github.com/users/${user}`)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    updateUser(data)
-  });
+/*                        FORM CONTROL                        */
+
+let form = document.getElementById("user-search");
+form.addEventListener("submit", (e) => e.preventDefault())
+
+let searchButton = document.getElementById("search-button");
+searchButton.addEventListener("click", onSearchButtonClicked);
+
+let searchInput = document.getElementById("search");
+searchInput.addEventListener("focusin", () => {
+  document.getElementById("search-label").classList.add("isHidden");
+});
+
+function onSearchButtonClicked(e) {
+  let user = searchInput.value;
+  if (!user) {
+    document.getElementById("search-label").classList.toggle("isHidden");
+  }
+  console.log(user);
+  
+}
+
+
+/*                            API FETCH                               */
+function fetchUser(user) {
+  fetch(`https://api.github.com/users/${user}`)
+    .then(response => response.json())
+    .then(data => updateUser(data));
+}
 
 function update(element, value, href=null) {
   let el = document.querySelector(`[data-js="${element}"]`);
@@ -20,7 +44,7 @@ function update(element, value, href=null) {
       break;
     case "userBio":
       if (value == null) {
-        el.textContent = "No bio available for this user";
+        el.textContent = "This profile has no bio";
       } else {
         el.textContent = value;
       }
@@ -37,10 +61,11 @@ function update(element, value, href=null) {
     case "userWebsite":
       el.setAttribute("href", href);
     default:
-      if(value) {
+      if(value || value === 0) {
         el.textContent = value;
       } else {
         el.textContent = "Not Available";
+        el.parentNode.classList.add("grayed-out");
       }
       break;
   }
@@ -60,3 +85,19 @@ function updateUser(data) {
   update("userCompany", data.company);
   update("userJoinDate", data.created_at);
 }
+
+/*                          COLOR THEME SWITCH                              */
+let lightThemeToggleSwitch = document.querySelector(`[data-switch="light"]`);
+let darkThemeToggleSwitch = document.querySelector(`[data-switch="dark"]`)
+
+lightThemeToggleSwitch.addEventListener("click", (e) => {
+  lightThemeToggleSwitch.classList.toggle("isHidden");
+  darkThemeToggleSwitch.classList.toggle("isHidden");
+  document.body.setAttribute("data-theme", "default");
+})
+
+darkThemeToggleSwitch.addEventListener("click", (e) => {
+  lightThemeToggleSwitch.classList.toggle("isHidden");
+  darkThemeToggleSwitch.classList.toggle("isHidden");
+  document.body.setAttribute("data-theme", "dark");
+})

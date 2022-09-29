@@ -1,0 +1,8 @@
+.grayed-out {
+  color: rgba(var(--color-light-text), 0.5);
+  fill: rgba(var(--color-light-text), 0.5);
+}
+
+.isHidden {
+  display: none;
+}
