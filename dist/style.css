@@ -569,12 +569,12 @@ a:visited {
 .user__tag {
   grid-area: tag;
   margin-bottom: 0.4em;
-  color: rgba(var(--color-account-tag), 1);
+  color: rgb(var(--color-account-tag));
 }
 .user__joined {
   grid-area: joined;
   margin-bottom: 2.5em;
-  color: rgba(var(--color-join-date));
+  color: rgb(var(--color-join-date));
 }
 .user__bio {
   grid-area: bio;
@@ -597,6 +597,7 @@ a:visited {
   }
   .user__joined {
     margin-bottom: 0;
+    align-self: center;
   }
   .user__tag {
     margin-bottom: 2.5em;

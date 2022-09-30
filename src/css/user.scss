@@ -20,9 +20,12 @@
 
   &__avatar {
     grid-area: avatar;
+
     display: block;
+    
     width: min(100%, 7.8em);
     margin-bottom: 1.6em;
+    
     border-radius: 50%;
   }
 
@@ -34,13 +37,13 @@
   &__tag {
     grid-area: tag;
     margin-bottom: 0.4em;
-    color: rgba(var(--color-account-tag), 1);
+    color: rgb(var(--color-account-tag));
   }
   
   &__joined {
     grid-area: joined;
     margin-bottom: 2.5em;
-    color: rgba(var(--color-join-date));
+    color: rgb(var(--color-join-date));
   }
 
   &__bio {
@@ -71,6 +74,7 @@
   
     &__joined {
       margin-bottom: 0;
+      align-self: center;
     }
   
     &__tag {
