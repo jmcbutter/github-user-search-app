@@ -15,6 +15,9 @@
     grid-column: 1;
   
     transform: translateX(1.2em);
+
+    color: rgb(var(--color-search-bar-dark-blue));
+    z-index: 2;
   }
 
   &__input {

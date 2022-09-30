@@ -499,6 +499,8 @@ a:visited {
 .user-search__icon {
   grid-column: 1;
   transform: translateX(1.2em);
+  color: rgb(var(--color-search-bar-dark-blue));
+  z-index: 2;
 }
 .user-search__input {
   grid-column: 1/span 4;
