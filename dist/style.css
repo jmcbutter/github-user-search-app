@@ -481,11 +481,11 @@ a:visited {
   padding-left: 3.4em;
   height: 100%;
   z-index: 0;
-  color: var(--color-search-text);
-  caret-color: rgba(var(--color-search-bar-dark-blue), 1);
+  color: rgb(var(--color-search-text));
+  caret-color: rgb(var(--color-search-bar-dark-blue));
 }
 .user-search__input:focus {
-  outline: 1px solid rgba(var(--color-search-bar-dark-blue), 1);
+  outline: 1px solid rgb(var(--color-search-bar-dark-blue));
 }
 .user-search__input:focus ~ .user-search__label {
   display: none;
@@ -499,9 +499,13 @@ a:visited {
   padding: 0 1.4em;
   border-radius: 0.7em;
   border: none;
-  background-color: rgba(var(--color-search-bar-dark-blue), 1);
+  background-color: rgb(var(--color-search-bar-dark-blue));
   color: white;
   font-weight: bold;
+  cursor: pointer;
+}
+.user-search__button:hover {
+  background-color: rgb(var(--color-search-bar-light-blue));
 }
 .user-search__label {
   grid-column: 3;
@@ -657,7 +661,8 @@ a:visited {
   border-radius: 1.2em;
   border: none;
   box-shadow: 0 1.2em 2.3em rgba(var(--color-box-shadow), 0.2);
-  background-color: rgba(var(--color-container), 1);
+  background-color: rgb(var(--color-container));
+  z-index: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

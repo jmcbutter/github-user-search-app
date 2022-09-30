@@ -11,25 +11,41 @@ let searchButton = document.getElementById("search-button");
 searchButton.addEventListener("click", onSearchButtonClicked);
 
 let searchInput = document.getElementById("search");
-searchInput.addEventListener("focusin", () => {
+searchInput.addEventListener("focusin", (e) => {
   document.getElementById("search-label").classList.add("isHidden");
+  e.target.value = "";
+});
+
+searchInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    e.target.blur();
+  }
 });
 
 function onSearchButtonClicked(e) {
   let user = searchInput.value;
   if (!user) {
-    document.getElementById("search-label").classList.toggle("isHidden");
+    document.getElementById("search-label").classList.remove("isHidden");
+  } else {
+    fetchUser(user);
   }
-  console.log(user);
-  
 }
 
 
 /*                            API FETCH                               */
 function fetchUser(user) {
   fetch(`https://api.github.com/users/${user}`)
-    .then(response => response.json())
-    .then(data => updateUser(data));
+    .then(response => {
+      console.log(response);
+      if (!response.ok) {
+        document.getElementById("search-label").classList.remove("isHidden");
+        throw Error(response.statusText);
+      } else {
+        return response.json()
+      }
+    })
+    .then(data => updateUser(data))
+    .catch(error => console.log(error));
 }
 
 function update(element, value, href=null) {
@@ -58,10 +74,20 @@ function update(element, value, href=null) {
 
       el.textContent = `Joined ${formatter.format(date)}`
       break;
+    case "userName":
+      if(value || value === 0) {
+        el.textContent = value;
+        el.parentNode.classList.remove("grayed-out");
+      } else {
+        el.textContent = "No Name Available";
+        el.parentNode.classList.add("grayed-out");
+      }
+      break;
     case "userWebsite":
       el.setAttribute("href", href);
     default:
       if(value || value === 0) {
+        el.parentNode.classList.remove("grayed-out");
         el.textContent = value;
       } else {
         el.textContent = "Not Available";

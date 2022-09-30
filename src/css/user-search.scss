@@ -25,11 +25,11 @@
     
     z-index: 0;
   
-    color: var(--color-search-text);
-    caret-color: rgba(var(--color-search-bar-dark-blue), 1);
+    color: rgb(var(--color-search-text));
+    caret-color: rgb(var(--color-search-bar-dark-blue));
 
     &:focus {
-      outline: 1px solid rgba(var(--color-search-bar-dark-blue), 1);
+      outline: 1px solid rgb(var(--color-search-bar-dark-blue));
 
       & ~ .user-search__label {
         display: none;
@@ -50,10 +50,16 @@
     border-radius: 0.7em;
     border: none;
     
-    background-color: rgba(var(--color-search-bar-dark-blue), 1);
+    background-color: rgb(var(--color-search-bar-dark-blue));
     
     color: white;
     font-weight: bold;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(var(--color-search-bar-light-blue));
+    }
   }
 
   &__label {

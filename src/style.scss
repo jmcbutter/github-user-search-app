@@ -14,5 +14,6 @@
   border-radius: 1.2em;
   border: none;
   box-shadow: 0 1.2em 2.3em rgba(var(--color-box-shadow), 0.2);
-  background-color: rgba(var(--color-container), 1);
+  background-color: rgb(var(--color-container));
+  z-index: 1;
 }
