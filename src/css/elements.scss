@@ -40,8 +40,9 @@ a {
   color: inherit;
   text-decoration: none;
 
-  &:hover {
+  &[href]:hover {
     text-decoration: underline;
+    cursor: pointer;
   }
 
   &:visited {

@@ -443,8 +443,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
-a:hover {
+a[href]:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 a:visited {
   color: inherit;
