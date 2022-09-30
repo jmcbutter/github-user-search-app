@@ -79,11 +79,14 @@ function update(element, value, href=null) {
         el.textContent = value;
         el.parentNode.classList.remove("grayed-out");
       } else {
+        //TODO Show User Tag without @ Symbol in UserName field if name is empty
         el.textContent = "No Name Available";
         el.parentNode.classList.add("grayed-out");
       }
       break;
     case "userWebsite":
+      //TODO Make Website, Twitter, and Company Information all links. Company should link to company's page on github
+      //TODO Remove @ symbol from company link for link URL (ex: @github ==> https://github.com/github)
       el.setAttribute("href", href);
     default:
       if(value || value === 0) {
@@ -114,7 +117,9 @@ function updateUser(data) {
 
 /*                          COLOR THEME SWITCH                              */
 let lightThemeToggleSwitch = document.querySelector(`[data-switch="light"]`);
-let darkThemeToggleSwitch = document.querySelector(`[data-switch="dark"]`)
+let darkThemeToggleSwitch = document.querySelector(`[data-switch="dark"]`);
+
+//TODO Set color scheme using prefers-color-scheme in CSS
 
 lightThemeToggleSwitch.addEventListener("click", (e) => {
   lightThemeToggleSwitch.classList.toggle("isHidden");
